@@ -9,7 +9,8 @@ publish it to the registry. **The recommended path is GitHub Actions, publishing
 
 ## Repo skeleton
 
-A repo that auto-publishes (the template is the app-bundled `examples/plugin-template/`):
+The skeleton of a repo that auto-publishes (this page lists every file's contents in full — copy
+them to reproduce the official template):
 
 ```
 manifest.json                     plugin declaration

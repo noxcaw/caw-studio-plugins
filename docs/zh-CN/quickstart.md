@@ -128,8 +128,9 @@ def hello(ctx):
   import 报错、`pluginApi` 高于宿主支持版本）会以 fatal 事件形式暴露。
 - **取消**：任务里的 `python` 步骤取消 = 杀宿主进程（进程即隔离边界，下次调用自动重启）。
 
-> 提示：`hello-contribs` 是官方随应用附带的贡献点全覆盖示例（commands + settings + i18n +
-> chips + python 入口 + webview 面板）。把它侧载出来对照着改，是最快的上手方式。
+> 提示：本文档的贡献点专章（命令与设置、语言包、Webview 面板、芯片支持包）用同一个最小示例
+> 贯穿演示（commands + settings + i18n + chips + python 入口 + webview 面板）；把这些片段拼进
+> 一个插件目录、侧载运行，就得到一个覆盖全部贡献点的最小插件。
 
 ## 下一步
 

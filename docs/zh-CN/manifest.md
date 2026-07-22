@@ -1,7 +1,7 @@
 # manifest 清单参考
 
 `manifest.json` 是插件的唯一声明入口，位于插件仓库/目录根。本页逐字段说明顶层与制品字段，
-以客户端真实解析（`src-tauri/src/plugin/`）为准。贡献点（`contributes.*`）各字段见
+以 CAW Studio 客户端的真实解析行为为准。贡献点（`contributes.*`）各字段见
 [贡献点总览](contributes.md)及其子页。
 
 ## 全量骨架

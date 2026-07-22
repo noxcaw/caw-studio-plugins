@@ -1,8 +1,8 @@
 # Manifest Reference
 
 `manifest.json` is a plugin's single declaration entry, living at the root of the plugin
-repo/directory. This page documents every top-level and artifact field, matching the real client
-parser (`src-tauri/src/plugin/`). Contribution-point fields (`contributes.*`) are covered in
+repo/directory. This page documents every top-level and artifact field, matching the CAW Studio
+client's real parsing behavior. Contribution-point fields (`contributes.*`) are covered in
 [Contribution Points](contributes.md) and its sub-pages.
 
 ## Full skeleton

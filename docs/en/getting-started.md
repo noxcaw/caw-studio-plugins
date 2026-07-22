@@ -34,8 +34,7 @@ Everything is installed under the user's home directory (zero admin rights):
     <id>/<version>/manifest.json   the full manifest frozen at install time
     <id>/<version>/files/          package artifact extraction root (base for relative paths)
   tools/<name>/<version>/          shared pool of tool artifacts, reused across plugins by version
-  host/<hash>/                     host scripts plugin_host.py + caw_plugin.py
-                                   (ship with the app, materialized on first use; new hash dir on upgrade)
+  host/<hash>/                     host runtime (ships with the app, materialized on first use; new hash dir on upgrade)
   envs/plugins/<id>/               dedicated venv for plugins that declare python.dependencies
   tmp/                             download/extract staging (same filesystem as pools => atomic rename)
 ```

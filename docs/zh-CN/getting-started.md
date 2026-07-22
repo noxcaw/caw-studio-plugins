@@ -33,8 +33,7 @@ Python 宿主进程使用的解释器按此顺序解析：
     <id>/<version>/manifest.json   安装时固化的完整清单
     <id>/<version>/files/          package 制品解压根(manifest 相对路径的基准)
   tools/<name>/<version>/          tool 制品共享池,插件间按版本并排复用
-  host/<hash>/                     宿主脚本 plugin_host.py + caw_plugin.py
-                                   (随应用分发,首次使用物化;升级换 hash 目录)
+  host/<hash>/                     宿主运行时(随应用分发,首次使用物化;升级换 hash 目录)
   envs/plugins/<id>/               声明了 python.dependencies 的插件的独立 venv
   tmp/                             下载/解压中转(与池同文件系统 ⇒ rename 原子)
 ```

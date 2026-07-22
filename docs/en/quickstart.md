@@ -140,9 +140,10 @@ packaging needed:
 - **Cancelling**: cancelling a `python` step in a task kills the host process (the process is the
   isolation boundary; the next invocation restarts it automatically).
 
-> Tip: `hello-contribs` is an official sample bundled with the app that exercises every
-> contribution point (commands + settings + i18n + chips + python entry + webview panel).
-> Sideloading it and editing alongside is the fastest way to learn.
+> Tip: this documentation's per-point chapters (Commands & Settings, Localization, Webview Panels,
+> Chip Support Packs) use one small running example throughout (commands + settings + i18n + chips
+> + python entry + webview panel); assemble those snippets into a plugin directory and sideload it
+> to get a minimal plugin covering every contribution point.
 
 ## Next steps
 
