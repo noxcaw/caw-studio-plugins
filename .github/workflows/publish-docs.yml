@@ -1,0 +1,50 @@
+# docs-as-code:把产品仓库里的 docs/ 目录发布到 caw-server 文档站。
+#
+# 放到产品仓库的 .github/workflows/publish-docs.yml,并把 build-sync-json.mjs
+# 一并拷进仓库(例如 scripts/build-sync-json.mjs)。
+#
+# 需要在仓库 Settings → Secrets and variables → Actions 配置:
+#   secret  DOCS_SYNC_TOKEN  —— caw-server 后台创建的、带 docs_sync scope 的 API token
+#   var     CAW_SERVER_BASE  —— 如 https://api.noxcaw.com(caw-server 地址)
+#   var     DOCS_PRODUCT     —— 目标产品 slug(caw-studio / cawlib / cawlib-emb / plugins)
+#
+# 前置:目标产品需在 caw-server 后台把「来源」切换为 repo(否则 sync 返回 source_not_repo)。
+
+name: Publish docs
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/**']
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build sync payload
+        run: node scripts/build-sync-json.mjs docs > sync.json
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
+      - name: Push to caw-server
+        env:
+          DOCS_BASE_URL: ${{ vars.CAW_SERVER_BASE }}
+          DOCS_PRODUCT: ${{ vars.DOCS_PRODUCT }}
+          DOCS_SYNC_TOKEN: ${{ secrets.DOCS_SYNC_TOKEN }}
+        run: |
+          set -euo pipefail
+          code=$(curl -sS -o resp.json -w '%{http_code}' \
+            -X POST "${DOCS_BASE_URL}/api/docs/${DOCS_PRODUCT}/sync" \
+            -H "authorization: Bearer ${DOCS_SYNC_TOKEN}" \
+            -H "content-type: application/json" \
+            --data @sync.json)
+          echo "HTTP ${code}"; cat resp.json; echo
+          test "$code" = "200"

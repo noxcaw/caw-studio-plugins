@@ -1,0 +1,76 @@
+{
+  "pages": [
+    {
+      "slug": "overview",
+      "titles": { "zh-CN": "概述与能力边界", "en": "Overview & Capabilities" },
+      "files": { "zh-CN": "overview.md", "en": "overview.md" }
+    },
+    {
+      "slug": "getting-started",
+      "titles": { "zh-CN": "开发环境准备", "en": "Getting Started" },
+      "files": { "zh-CN": "getting-started.md", "en": "getting-started.md" }
+    },
+    {
+      "slug": "quickstart",
+      "titles": { "zh-CN": "创建第一个插件", "en": "Your First Plugin" },
+      "files": { "zh-CN": "quickstart.md", "en": "quickstart.md" }
+    },
+    {
+      "slug": "manifest",
+      "titles": { "zh-CN": "manifest 清单参考", "en": "Manifest Reference" },
+      "files": { "zh-CN": "manifest.md", "en": "manifest.md" }
+    },
+    {
+      "slug": "contributes",
+      "titles": { "zh-CN": "贡献点总览", "en": "Contribution Points" },
+      "files": { "zh-CN": "contributes.md", "en": "contributes.md" },
+      "children": [
+        {
+          "slug": "chips",
+          "titles": { "zh-CN": "芯片支持包", "en": "Chip Support Packs" },
+          "files": { "zh-CN": "contributes/chips.md", "en": "contributes/chips.md" }
+        },
+        {
+          "slug": "commands-and-settings",
+          "titles": { "zh-CN": "命令与设置", "en": "Commands & Settings" },
+          "files": { "zh-CN": "contributes/commands-and-settings.md", "en": "contributes/commands-and-settings.md" }
+        },
+        {
+          "slug": "tasks",
+          "titles": { "zh-CN": "嵌入式任务", "en": "Embedded Tasks" },
+          "files": { "zh-CN": "contributes/tasks.md", "en": "contributes/tasks.md" }
+        },
+        {
+          "slug": "i18n",
+          "titles": { "zh-CN": "语言包", "en": "Localization" },
+          "files": { "zh-CN": "contributes/i18n.md", "en": "contributes/i18n.md" }
+        },
+        {
+          "slug": "panels",
+          "titles": { "zh-CN": "Webview 面板", "en": "Webview Panels" },
+          "files": { "zh-CN": "contributes/panels.md", "en": "contributes/panels.md" }
+        }
+      ]
+    },
+    {
+      "slug": "python-host",
+      "titles": { "zh-CN": "Python 宿主 API", "en": "Python Host API" },
+      "files": { "zh-CN": "python-host.md", "en": "python-host.md" }
+    },
+    {
+      "slug": "publishing",
+      "titles": { "zh-CN": "打包与发布", "en": "Packaging & Publishing" },
+      "files": { "zh-CN": "publishing.md", "en": "publishing.md" }
+    },
+    {
+      "slug": "versioning",
+      "titles": { "zh-CN": "版本与兼容性", "en": "Versioning & Compatibility" },
+      "files": { "zh-CN": "versioning.md", "en": "versioning.md" }
+    },
+    {
+      "slug": "faq",
+      "titles": { "zh-CN": "常见问题", "en": "FAQ" },
+      "files": { "zh-CN": "faq.md", "en": "faq.md" }
+    }
+  ]
+}
